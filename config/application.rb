@@ -37,9 +37,7 @@ module Kadencer
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password]
-  
-    #Action Mailer
-    config.action_mailer.default_url_options = { :host => 'kadencer.com' }
+    config.filter_parameters += [:password]  
+    
   end
 end

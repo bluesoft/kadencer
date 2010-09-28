@@ -1,0 +1,10 @@
+body {
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+.user_new {
+	background-color: #f2f2f2;
+	padding: 15px;
+	margin: auto;	
+}
