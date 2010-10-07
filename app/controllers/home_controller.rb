@@ -3,7 +3,9 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!
   
   def index
-    flash[:notice] = 'juniao'
+    if current_user.organizations.size == 0
+      redirect_to "/organizations/new"
+    end
   end
   
 end

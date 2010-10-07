@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 'Bluesoft'
+  site_name: bluesoft
+
+two:
+  name: 'Belgo'
+  site_name: 'belgo'
