@@ -1,0 +1,50 @@
+pt-BR:
+  general:
+    show: "Exibir"
+    destroy: "Excluir"
+    edit: "Editar"
+  organizations:
+    organization: "Organização"
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "Não foi possível gravar {{model}}: 1 erro"
+          other: "Não foi possível gravar {{model}}: {{count}} erros."
+        body: "Por favor, verifique o(s) seguinte(s) campo(s):"        
+      models:
+        organization:
+          attributes:
+            site_name:
+              blank: "informe o nome do site"
+            name:
+              blank: "informe o nome da organização"
+      messages:
+        inclusion: "não está incluído na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não está de acordo com a confirmação"
+        accepted: "deve ser aceito"
+        empty: "não pode ficar vazio"
+        blank: "não pode ficar em branco"
+        too_long: "é muito longo (máximo: {{count}} caracteres)"
+        too_short: "é muito curto (mínimo: {{count}} caracteres)"
+        wrong_length: "não possui o tamanho esperado ({{count}} caracteres)"
+        taken: "já está em uso"
+        not_a_number: "não é um número"
+        greater_than: "deve ser maior do que {{count}}"
+        greater_than_or_equal_to: "deve ser maior ou igual a {{count}}"
+        equal_to: "deve ser igual a {{count}}"
+        less_than: "deve ser menor do que {{count}}"
+        less_than_or_equal_to: "deve ser menor ou igual a {{count}}"
+        odd: "deve ser ímpar"
+        even: "deve ser par"
+        record_invalid: "A validação falhou: {{errors}}"
+        existence: "não existe"
+        same_author: "não pode ser o mesmo autor"
+        incomplete: "perfil de autor incompleto"
+        experience_report_duration: "só pode ser 45 minutos"
+        experience_report_session_type: "só pode ser uma Palestra"
+        email_format: "deve ter um formato de e-mail válido"
+        username_format: "deve usar apenas letras, números, espaços e .-_@"
+        constant: "não pode mudar"

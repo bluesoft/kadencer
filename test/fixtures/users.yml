@@ -6,7 +6,9 @@
 #
 one:
     email: 'andre.java@gmail.com'
-
+    fullName: 'Andre Faria'
+    encrypted_password: 'x'
+    password_salt: 'x'
 two: 
     email: 'lui@bluesoft.com.br'
 
