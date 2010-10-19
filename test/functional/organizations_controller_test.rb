@@ -6,24 +6,14 @@ class OrganizationsControllerTest < ActionController::TestCase
   setup do
     @organization = organizations(:one)
     @user = users(:one)
+    sign_in @user
   end
 
   test "should add the user to the organization" do
-    sign_in @user 
-    assert  user_signed_in?
-    assert @user.active? == true
-
-    
-    
-    #post :create, :organization => @organization.attributes
-    #assert_redirected_to 'x'
-    #assert_response :redirect
-    #assert_template 'show'
-
-    
-    #assert assigns(:organization).valid?    
-    assert @organization.users.size == 1
-
+    post :create, :organization => @organization.attributes
+    assert assigns(:organization).valid?
+    assert assigns(:organization).users.size == 1, 'The organization was not associated to current user'
+    assert_redirected_to(:controller => "home")
   end
 
 end

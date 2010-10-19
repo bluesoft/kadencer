@@ -1,14 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise'
+gem "rspec-rails", "2.0.1"
 gem 'inherited_resources', '1.1.2'
-#gem 'inherited_resources_views'
+gem "autotest"
+#gem "factory_girl"
 
 # Use unicorn as the web server
 # gem 'unicorn'

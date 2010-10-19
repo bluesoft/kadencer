@@ -3,8 +3,10 @@ class OrganizationsController < InheritedResources::Base
   respond_to :html
   actions :show, :new, :create
   
-  def create
-    @organization.users << User.new
+  def create    
+    super
+    @organization.users << current_user
+    redirect_to root_url
   end
   
 end

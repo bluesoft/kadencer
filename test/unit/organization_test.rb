@@ -1,8 +1,14 @@
 require 'test_helper'
 
 class OrganizationTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  
+  test "the organization sitename should be unique" do
+
+    x = Organization.new(:name => 'Junioes', :site_name => 'junioes')
+    assert x.save
+    
+    y = Organization.new(:name => 'Junioes', :site_name => 'junioes')
+    assert !y.save
   end
+  
 end

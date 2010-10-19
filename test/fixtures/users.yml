@@ -5,10 +5,8 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-    email: 'andre.java@gmail.com'
-    fullName: 'Andre Faria'
-    encrypted_password: 'x'
-    password_salt: 'x'
+  email: "andre.java@gmail.com"
+  confirmed_at: "2010-10-19 10:45:07"
 two: 
     email: 'lui@bluesoft.com.br'
 
