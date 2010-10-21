@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101007111635) do
+ActiveRecord::Schema.define(:version => 20101021103325) do
 
   create_table "organizations", :force => true do |t|
     t.string   "name"
     t.string   "site_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner"
   end
 
   add_index "organizations", ["site_name"], :name => "index_organizations_on_site_name", :unique => true
