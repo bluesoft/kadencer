@@ -9,7 +9,7 @@ class OrganizationsControllerTest < ActionController::TestCase
     sign_in @user
   end
 
-  test "should add the user to the organization and set him as the owner" do
+  test "should add the user to the organization and set him as the owne r" do
     post :create, :organization => @organization.attributes
     assert assigns(:organization).valid?
     assert assigns(:organization).owner == @user

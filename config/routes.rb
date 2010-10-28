@@ -1,5 +1,7 @@
 Kadencer::Application.routes.draw do
 
+  resources :projects
+
   resources :organizations
 
   devise_for :users
