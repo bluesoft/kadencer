@@ -4,8 +4,9 @@ one:
   id: 1
   name: 'Bluesoft'
   site_name: bluesoft
-
+  owner: 1
 two:
   id: 2
   name: 'Belgo'
   site_name: 'belgo'
+  owner: 2

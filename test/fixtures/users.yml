@@ -1,12 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
 one:
-  email: "andre.java@gmail.com"
-  confirmed_at: "2010-10-19 10:45:07"
+    id: 1
+    email: "andre.java@gmail.com"
+    confirmed_at: "2010-10-19 10:45:07"
 two: 
+    id: 2    
     email: 'lui@bluesoft.com.br'
-
+    confirmed_at: "2010-10-19 10:45:07"

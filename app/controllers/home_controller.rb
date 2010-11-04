@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   def index
     if current_user.organizations.size == 0
       redirect_to "/organizations/new"
+    else
+      redirect_to "/projects"
     end
   end
   
