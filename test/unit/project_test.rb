@@ -2,13 +2,10 @@ require 'test_helper'
 
 class ProjectTest < ActiveSupport::TestCase
      
-  
-  test "index should show all projects from all the organizations that the user belongs grouped by organization" do
-    
+  test 'Project.ofUser should return only the projects that the user belongs' do    
+    assert Project.ofUser(1).first == projects(:erp)
+    assert Project.ofUser(2).first == projects(:pronto)
   end
   
-  test "index should provide a link for the user to create a new project in the organization that he owns" do
-    
-  end
   
 end

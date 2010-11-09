@@ -3,3 +3,8 @@ erp:
     name: 'erp'
     has_iterations: true
     organization_id: 1
+pronto:
+    id: 2
+    name: 'pronto'
+    has_iterations: false
+    organization_id: 2    

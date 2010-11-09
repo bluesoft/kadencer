@@ -3,12 +3,18 @@ class ProjectsController < InheritedResources::Base
   respond_to :html
   actions :show, :new, :create, :index
   
-  def index
-    
+  def index    
+    @projects = Project.ofUser(current_user.id)
+  end
+  
+  def new
+    @organization = Organization.where(['owner = ?', current_user.id]).first
+    super
   end
     
   def create
     @project = Project.new(params[:project])     
+    @project.organization = Organization.find(params[:organization_id])
        if @project.organization.owner != current_user
          flash[:alert] = 'Only the organization owner can create a project'         
          respond_to do |format|       

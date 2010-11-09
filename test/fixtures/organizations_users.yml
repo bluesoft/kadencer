@@ -1,0 +1,6 @@
+user_one_belogns_to_bluesoft:
+  organization_id: 1
+  user_id: 1
+user_two_belongs_to_belgo:
+  organization_id: 2
+  user_id: 2
