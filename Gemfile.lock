@@ -48,6 +48,8 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mocha (0.9.9)
+      rake
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -84,5 +86,6 @@ DEPENDENCIES
   autotest
   devise
   inherited_resources (= 1.1.2)
+  mocha
   rails (= 3.0.1)
   sqlite3-ruby

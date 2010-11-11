@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20101028100727) do
     t.integer  "owner"
   end
 
+  add_index "organizations", ["site_name"], :name => "index_organizations_on_site_name", :unique => true
+
   create_table "organizations_users", :id => false, :force => true do |t|
     t.integer "organization_id"
     t.integer "user_id"
@@ -54,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20101028100727) do
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "fullName"
+    t.string   "fullName",             :limit => nil
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

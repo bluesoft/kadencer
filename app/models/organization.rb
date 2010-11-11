@@ -5,5 +5,8 @@ class Organization < ActiveRecord::Base
     
     validates_presence_of :name, :site_name, :owner
     validates_uniqueness_of :site_name, :case_sensitive => false    
-  
+
+    def self.of_owner(owner_id)
+      Organization.where(['owner = ?', owner_id]).first
+    end
 end

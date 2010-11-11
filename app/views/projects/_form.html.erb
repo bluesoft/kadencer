@@ -21,11 +21,11 @@
     <%= f.check_box :has_iterations %>
   </div>
 
-<div class="field">
-    <%= t('organizations.organization') %><br />
-    <b><%= @organization.name %></b>
-	<%= hidden_field_tag(:organization_id, @organization.id) %>
-  </div>
+	<div class="field">
+	    <%= t('organizations.organization') %><br />
+	    <b><%= @organization.name %></b>
+		<%= hidden_field_tag(:organization_id, @organization.id) %>
+	</div>
 
   <div class="actions">
     <%= f.submit %>

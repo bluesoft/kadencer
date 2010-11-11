@@ -4,8 +4,6 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise'
 gem 'inherited_resources', '1.1.2'
-gem "autotest"
-#gem "factory_girl"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -28,3 +26,8 @@ gem "autotest"
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+group :test do
+	gem "autotest"
+	gem "mocha"
+end
