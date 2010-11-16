@@ -139,4 +139,9 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
+
+  #make it automaticaly include devise helper in rspec specs
+  RSpec.configure do |config|
+    config.include Devise::TestHelpers, :type => :controller
+   end
 end
