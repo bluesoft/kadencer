@@ -5,7 +5,7 @@ class Project < ActiveRecord::Base
   validates_presence_of :organization_id
   
   def self.of_user(user_id)
-    Project.all(:joins => "inner join organizations_users ou on ou.organization_id = projects.organization_id and ou.user_id = #{user_id}")    
+    Project.all(:joins => "inner join organizations_users ou on ou.organization_id = projects.organization_id and ou.user_id = #{user_id}")
   end  
   
 end

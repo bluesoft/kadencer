@@ -4,7 +4,14 @@ class ProjectsController < InheritedResources::Base
   actions :show, :new, :index, :edit
   
   def index    
-    @projects = Project.of_user(current_user.id)
+    projects = Project.of_user(current_user.id)
+    @projects_map = {}
+    projects.each { |p|
+      if (!@projects_map[p.organization_id]) then
+          @projects_map[p.organization_id] = []
+      end
+      @projects_map[p.organization_id] << p            
+    }    
   end
   
   def new

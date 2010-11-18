@@ -54,3 +54,9 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.highlight {
+	background-color: #0066cc;
+	color: white;
+	font-weight:bold;	
+}
