@@ -17,5 +17,9 @@ class OrganizationsControllerTest < ActionController::TestCase
     assert_redirected_to(:controller => "home")
   end
   
+  test 'the project owner should be able to add the new users to the project ' do
+    fail
+  end
+  
 
 end

@@ -1,7 +1,7 @@
 class ProjectsController < InheritedResources::Base
   before_filter :authenticate_user!
   respond_to :html
-  actions :show, :new, :index, :edit
+  actions :show, :new, :index, :edit, :destroy
   
   def index    
     projects = Project.of_user(current_user.id)
@@ -15,13 +15,21 @@ class ProjectsController < InheritedResources::Base
   end
   
   def new
-    @organization = Organization.of_owner(current_user.id)    
+    @organization = Organization.of_owner(current_user.id)
     super
   end
   
-  def edit    
+  def edit
     @organization = Organization.of_owner(current_user.id)
-    super
+    @project = Project.find(params[:id])
+    if @project.organization.owner.id == current_user.id then      
+      respond_to do |format|       
+         format.html { render :action => "edit" }
+       end
+     else
+       flash[:alert] = 'Only the organization owner can edit the project'
+       redirect_to "/projects"
+    end    
   end
     
   def create
@@ -39,6 +47,20 @@ class ProjectsController < InheritedResources::Base
            format.html { render :action => "new" }
          end
        end     
+  end
+  
+  def destroy
+    @project = Project.find(params[:id])
+    if @project.organization.owner.id == current_user.id then
+      @project.destroy
+      respond_to do |format|
+        format.html { redirect_to(projects_url) }
+      end
+    else
+      flash[:alert] = 'Only the organization owner can delete the project'
+      redirect_to "/projects"
+    end
+    
   end
   
 
