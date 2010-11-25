@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
 gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'devise'
+gem 'devise', '1.1.2'	
 gem 'inherited_resources', '1.1.2'
 
 group :test, :development do
