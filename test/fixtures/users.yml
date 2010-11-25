@@ -10,3 +10,8 @@ two:
     email: 'lui@bluesoft.com.br'
     fullName: "Bruno Leandro Lui"
     confirmed_at: "2010-10-19 10:45:07"
+three: 
+    id: 3    
+    email: 'junior@bluesoft.com.br'
+    fullName: "Junião"
+    confirmed_at: "2010-10-19 11:10:25"

@@ -8,6 +8,7 @@ gem 'inherited_resources', '1.1.2'
 group :test, :development do
 	gem "rspec", "~> 2.0.1"	
 	gem "rspec-rails", "~> 2.0.1"	
+	gem "webrat"
 end
 
 group :test do

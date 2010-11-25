@@ -1,7 +1,7 @@
 class ProjectsController < InheritedResources::Base
   before_filter :authenticate_user!
   respond_to :html
-  actions :show, :new, :index, :edit, :destroy
+  actions :show, :new, :index, :edit, :destroy, :update
   
   def index    
     projects = Project.of_user(current_user.id)

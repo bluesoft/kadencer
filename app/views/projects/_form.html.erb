@@ -27,6 +27,21 @@
 		<%= hidden_field_tag(:organization_id, @organization.id) %>
 	</div>
 
+	<div id="users">
+		<b>Users:</b>
+		<ul>
+			<% @project.organization.users.each { |user| %>
+				<li><%= user.fullName %></li>
+			<% } %>
+		</ul>
+		
+		<div class="new_user">
+			<b>Add User:</b>
+			<%= text_field_tag(:new_user) %>
+			<button type="button">Add</button>
+		</div>
+	</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -10,6 +10,19 @@
   <%= @project.has_iterations %>
 </p>
 
+<p id="organization">
+  <b>Organization:</b>
+  <%= @project.organization.name %>
+</p>
+
+<p id="users">
+	<b>Users:</b>
+	<ul>
+		<% @project.organization.users.each { |user| %>
+			<li><%= user.fullName %></li>
+		<% } %>
+	</ul>
+</p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
