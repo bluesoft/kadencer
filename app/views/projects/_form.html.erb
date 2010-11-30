@@ -35,12 +35,6 @@
 				<li><%= user.fullName %></li>
 			<% } %>
 		</ul>
-		
-		<div class="new_user">
-			<b>Add User:</b>
-			<%= text_field_tag(:new_user) %>
-			<button type="button">Add</button>
-		</div>
 	</div>
 	<% end %>
 
@@ -48,3 +42,22 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<div class="new_user">
+	<% form_tag url_for(:action => "add_user"), :id => "form_add_user", :remote => true, "data-type" => "json" do %>			
+		<%= hidden_field_tag(:project_id, @project.id) %>
+		<b>Add User:</b>
+		<%= text_field_tag(:new_user) %>
+		<button type="submit">Add</button>				
+	<% end %>
+</div>
+
+<script>
+	$('#form_add_user').bind('ajax:success', function(evt, data, status, xhr){
+		alert('sucesso');
+		alert(data.fullName);
+	}).bind('ajax:failure', 	function(evt, data, status, xhr){
+
+	});
+</script>

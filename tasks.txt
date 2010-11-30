@@ -1,0 +1,2 @@
+* Move add_users to organization form.
+* Fix the pro creation to set the owner.

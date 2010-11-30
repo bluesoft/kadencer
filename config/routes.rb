@@ -1,6 +1,8 @@
 Kadencer::Application.routes.draw do
 
   resources :projects
+  match 'projects/add_user', :to => 'projects#add_user'  
+  
   resources :organizations
   devise_for :users
   

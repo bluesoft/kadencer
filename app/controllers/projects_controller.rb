@@ -1,6 +1,6 @@
 class ProjectsController < InheritedResources::Base
   before_filter :authenticate_user!
-  respond_to :html
+  respond_to :html, :js 
   actions :show, :new, :index, :edit, :destroy, :update
   
   def index    
@@ -16,6 +16,7 @@ class ProjectsController < InheritedResources::Base
   
   def new
     @organization = Organization.of_owner(current_user.id)
+    puts @organization.name
     super
   end
   
@@ -59,8 +60,14 @@ class ProjectsController < InheritedResources::Base
     else
       flash[:alert] = 'Only the organization owner can delete the project'
       redirect_to "/projects"
-    end
-    
+    end    
+  end
+  
+  def add_user 
+    @user = User.find_by_email(params[:new_user])
+    puts @user.fullName
+    puts params[:project_id]
+    respond_with @user
   end
   
 
