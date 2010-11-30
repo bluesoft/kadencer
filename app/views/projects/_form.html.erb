@@ -27,6 +27,7 @@
 		<%= hidden_field_tag(:organization_id, @organization.id) %>
 	</div>
 
+	<% if @project.organization != nil then %>
 	<div id="users">
 		<b>Users:</b>
 		<ul>
@@ -41,6 +42,7 @@
 			<button type="button">Add</button>
 		</div>
 	</div>
+	<% end %>
 
   <div class="actions">
     <%= f.submit %>
