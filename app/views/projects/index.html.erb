@@ -11,7 +11,9 @@
 
 <% @projects_map.each_pair do |organization, projects| %>
 	<tr class="highlight" id="organization_<%= organization %>">
-		<th colspan="4"><%= projects[0].organization.name %></th>
+		<th colspan="4">
+			<%= link_to projects[0].organization.name, :controller => "organizations", :action => "edit", :id => projects[0].organization.id %>
+		</th>
 	</tr>
 	<% projects.each do |project| %>
 	  <tr>

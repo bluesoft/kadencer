@@ -1,2 +1,3 @@
 * Move add_users to organization form.
-* Fix the pro creation to set the owner.
+* Fix the project creation to set the owner.
+* Fininsh the organizations controller tests.

@@ -21,5 +21,13 @@ class OrganizationsControllerTest < ActionController::TestCase
     fail
   end
   
+  test 'only the organization owner can edit the organization' do
+    @organization = organizations(:one)
+    post :edit, :id => @organization.id
+  end
+  
+  test 'should redirect to projects page if the user is not the organization owner' do
+    
+  end
 
 end
