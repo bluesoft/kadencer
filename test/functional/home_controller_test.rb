@@ -17,13 +17,14 @@ class HomeControllerTest < ActionController::TestCase
   end
 
   test "if the user does not have an organization we need to redirect him to the new organization page" do
-    post :index    
+    @user.organizations.clear
+    post :index
     assert_redirected_to(:controller => "organizations", :action => "new")
-  end
+  end    
   
-  test "if the users does not have a project it should show a message with a link to new project page" do
-    @user.projects.clear
+  test "if the user does not have a project it should show a message with a link to new project page" do
     post :index    
+    assert_redirected_to(:controller => "projects", :action => "index")
   end
   
 end

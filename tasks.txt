@@ -1,3 +1,4 @@
-* Move add_users to organization form.
 * Fix the project creation to set the owner.
 * Fininsh the organizations controller tests.
+* Change fullName to full_name.
+* Set the full_name on sign up.

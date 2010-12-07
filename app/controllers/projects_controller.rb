@@ -61,14 +61,6 @@ class ProjectsController < InheritedResources::Base
       flash[:alert] = 'Only the organization owner can delete the project'
       redirect_to "/projects"
     end    
-  end
-  
-  def add_user 
-    @user = User.find_by_email(params[:new_user])
-    puts @user.fullName
-    puts params[:project_id]
-    respond_with @user
-  end
-  
+  end  
 
 end

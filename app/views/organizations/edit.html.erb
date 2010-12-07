@@ -1,6 +1,41 @@
 <h1>Editing organization</h1>
 
+<p id="organization">
+  <b>Name:</b>
+  <%= @organization.name %>
+</p>
 
+<p>
+  <b>Owner:</b>
+  <%= @organization.owner.email %>
+</p>
+
+<div id="users">
+	<b>Users:</b>
+	<ul>
+		<% @organization.users.each { |user| %>
+			<li><%= user.fullName %></li>
+		<% } %>
+	</ul>
+</div>
+
+<div class="new_user">
+	<% form_tag url_for(:action => "add_user"), :id => "form_add_user", :remote => true, "data-type" => "json" do %>			
+		<%= hidden_field_tag(:organization_id, @organization.id) %>
+		<b>Add User:</b>
+		<%= text_field_tag(:new_user) %>
+		<button type="submit">Add</button>				
+	<% end %>
+</div>
+
+<script>
+	$('#form_add_user').bind('ajax:success', function(evt, data, status, xhr){
+		alert('sucesso');
+		alert(data.fullName);
+	}).bind('ajax:failure', 	function(evt, data, status, xhr){
+		alert('falha');
+	});
+</script>
 
 <%= link_to 'Show', @organization %> |
 <%= link_to 'Back', organizations_path %>

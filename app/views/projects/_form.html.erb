@@ -27,37 +27,7 @@
 		<%= hidden_field_tag(:organization_id, @organization.id) %>
 	</div>
 
-	<% if @project.organization != nil then %>
-	<div id="users">
-		<b>Users:</b>
-		<ul>
-			<% @project.organization.users.each { |user| %>
-				<li><%= user.fullName %></li>
-			<% } %>
-		</ul>
-	</div>
-	<% end %>
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-
-<div class="new_user">
-	<% form_tag url_for(:action => "add_user"), :id => "form_add_user", :remote => true, "data-type" => "json" do %>			
-		<%= hidden_field_tag(:project_id, @project.id) %>
-		<b>Add User:</b>
-		<%= text_field_tag(:new_user) %>
-		<button type="submit">Add</button>				
-	<% end %>
-</div>
-
-<script>
-	$('#form_add_user').bind('ajax:success', function(evt, data, status, xhr){
-		alert('sucesso');
-		alert(data.fullName);
-	}).bind('ajax:failure', 	function(evt, data, status, xhr){
-
-	});
-</script>
